@@ -4,7 +4,6 @@ import Html.Events exposing (..)
 import Random
 
 
-
 -- MAIN
 
 
@@ -12,19 +11,19 @@ main =
   Browser.element
     { init = init
     , update = update
-    , subscriptions = subscriptions
+    , subscriptions = (\_ -> Sub.none)
     , view = view
     }
 
 
-
 -- MODEL
-
 
 type alias Model =
   { dieFace : Int
   }
 
+value : Random.Generator Int
+value = Random.constant 2
 
 init : () -> (Model, Cmd Msg)
 init _ =
@@ -33,9 +32,7 @@ init _ =
   )
 
 
-
 -- UPDATE
-
 
 type Msg
   = Roll
@@ -47,23 +44,14 @@ update msg model =
   case msg of
     Roll ->
       ( model
-      , Random.generate NewFace (Random.int 1 6)
+      , Random.generate NewFace (value)
+      --, Random.generate NewFace (Random.int 1 6)
       )
 
     NewFace newFace ->
       ( Model newFace
       , Cmd.none
       )
-
-
-
--- SUBSCRIPTIONS
-
-
-subscriptions : Model -> Sub Msg
-subscriptions model =
-  Sub.none
-
 
 
 -- VIEW
