@@ -14,9 +14,7 @@ RagnhildsBestilling kelnerensAnbefaling
 
 Dette er en helt prima Elm-funksjon. Men, det kan sammenlignes med en Command, fordi Ragnhild kan på ingen måte garantere at den Spareribsen hun får servert er like god som på nabo-restauranten. Ragnhild har oppført seg eksemplarisk, og gir samme output ved samme input, men den påfølgende middagsopplevelsen er utenfor hennes kontroll! 
 
-
-
-På denne måten bryter ikke dette med det funksjonelle kravet om at samme funksjon med samme input alltid returnerer det samme, siden Commanden er lik, det er bare omverdenen som reagerer forskjellig på Commanden. Hvordan verden utenfor tolker og behandler oppskriften er en helt annen sak.
+På denne måten bryter ikke dette med det funksjonelle kravet om at samme funksjon med samme input alltid returnerer det samme, siden Commanden er lik, det er bare omverdenen som reagerer forskjellig på Commanden. 
 
 I dag skal vi titte på et eksempel på en slik funksjon som returnerer Commands, nemlig Random.generate, som ser slik ut.
 
