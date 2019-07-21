@@ -17,13 +17,27 @@ myGenerator : Generator Int
 myGenerator = Random.int 1 6
 ```
 
-Denne gjør nøyaktig det man forventer. Dette er en generator som genererer et tilfeldig heltall mellom 1 og 6. Nå som vi har definert `myGenerator`, kan denne brukes i funksjonen `Random.generate` som parameter nummer 2. Nå mangler vi bare parameter nummer 1, så har vi en funksjon vi kan bruke for å lage Commands!
+Denne gjør nøyaktig det man forventer. Dette er en generator som genererer et tilfeldig heltall mellom 1 og 6. Nå som vi har definert `myGenerator`, kan denne brukes i funksjonen `Random.generate` som parameter nummer 2, der vår generiske type `a` nå er spesifisert som `Int`. Nå mangler vi bare parameter nummer 1, så har vi en funksjon vi kan bruke for å lage Commands!
 
-Vi ser at parameter nummer 1 er en funksjon \(absolutt ALT i Elm er funksjoner, men vi får spare denne diskusjonen til senere\), og denne funksjonen forventer å få inn en `a` og produsere en `msg`  
+Vi ser at parameter nummer 1 er en funksjon \(absolutt ALT i Elm er funksjoner, men vi får spare denne diskusjonen til senere\), og denne funksjonen forventer å få inn en `a` , som nå er `Int`, og produsere en `msg`. Dette er noe vi har sett før! Fra workshop'ene tidligere i sommer så vi på 
+
+```text
+type Msg = CardClicked Card
+```
+
+Dette er omtrent akkurat hva vi trenger nå. Vi trenger en Msg som har en konstruktør som tar inn en Int.
+
+```
+type Msg = NewDiceFace Int
+```
+
+Nå er vi nesten i mål! Konstruktøren  `NewDiceFace` er en funksjon  `(Int -> Msg)`  og `myGenerator` er av typen `Generator Int`. j  Da gjenstår det bare å gi disse parameterne til funksjonen `Random.generate`  og vi har lagd vår første Command!
+
+Etter at Commanden er utført av omverdenen, snapper Elm runtimen opp resultatet i `Update`. Derfor må vi lage en branch i Update som tar hensyn til å få inn `Msg` av typen `NewDiceFace`, og oppdatere modellen deretter.
 
 
 
-Så er det opp til "omverdenen" å omsette denne oppskrifta til et resultat.
+ Så er det opp til "omverdenen" å omsette denne oppskrifta til et resultat.
 
 
 
