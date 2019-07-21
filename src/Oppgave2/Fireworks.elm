@@ -1,6 +1,6 @@
 module Main exposing (main)
 
-import Helpers exposing (hslString, fireworkView, fizzler, Firework(..), Color(..))
+import Helpers exposing (hslString, fireworkView, Firework(..), Color(..))
 import Browser exposing (Document)
 import Html exposing (Html)
 import Html.Attributes exposing (style)
@@ -18,10 +18,17 @@ import Svg.Attributes as SAttrs
 type alias Model =
     System Firework
 
-
 type Msg
     = ParticleMsg (System.Msg Firework)
     | Detonate
+
+spark : Color -> Generator (Particle Firework)
+spark color =
+    Particle.init (Random.constant (Spark color))
+        |> Particle.withDirection (Random.map degrees (Random.float 0 360))
+        |> Particle.withSpeed (Random.map (clamp 0 200) (normal 100 100))
+        |> Particle.withLifetime (normal 1.25 0.1)
+
 
 spawnFireworks : Model -> (Model, Cmd Msg)
 spawnFireworks model =
@@ -37,7 +44,7 @@ spawnFireworks model =
 
 fireworkAt : Color -> Float -> Float -> Generator (List (Particle Firework))
 fireworkAt color x y =
-    fizzler color
+    spark color
         |> Particle.withLocation (Random.constant { x = x, y = y })
         |> Particle.withGravity 50
         |> Particle.withDrag

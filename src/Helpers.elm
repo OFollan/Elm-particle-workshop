@@ -14,19 +14,13 @@ import Svg.Attributes as SAttrs
 
 
 type Firework
-    = Fizzler Color
+    = Spark Color
 
 type Color
     = Red
     | Green
     | Blue
 
-fizzler : Color -> Generator (Particle Firework)
-fizzler color =
-    Particle.init (Random.constant (Fizzler color))
-        |> Particle.withDirection (Random.map degrees (Random.float 0 360))
-        |> Particle.withSpeed (Random.map (clamp 0 200) (normal 100 100))
-        |> Particle.withLifetime (normal 1.25 0.1)
 
 
 hslString : Float -> Float -> Float -> String
@@ -55,7 +49,7 @@ toHsl color =
 fireworkView : Particle Firework -> Svg msg
 fireworkView particle =
     case Particle.data particle of
-        Fizzler color ->
+        Spark color ->
             let
                 length =
                     max 2 (Particle.speed particle / 15)
