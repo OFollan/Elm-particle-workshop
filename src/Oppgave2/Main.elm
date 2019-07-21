@@ -1,8 +1,9 @@
 module Main exposing (main)
 
 import Browser
-import Html exposing (Html)
+import Html exposing (Html, div)
 import Html.Attributes as Attrs exposing (style)
+import Html.Events exposing (onClick)
 import Particle exposing (Particle)
 import Particle.System as System exposing (System)
 import Random exposing (Generator)
@@ -19,15 +20,29 @@ main =
     Browser.element
         { init = \_ -> ( System.init (Random.initialSeed 0), Cmd.none )
         , view = view
-        , update = \msg system -> ( System.update msg system, Cmd.none )
-        , subscriptions =
-            \system -> System.sub [ waterEmitter ] identity system
+        , update = update
+        , subscriptions = \model -> System.sub [] ParticleMsg model
         }
+
+
+
+-- UPDATE
+update : Msg -> Model -> (Model, Cmd Msg)
+update msg model =
+    case msg of
+        --ParticleMsg  ->
+        --    (System.update msg system, Cmd.none)
+
+        _ ->
+            (System.update msg model, Cmd.none)
 
 
 
 -- emitters
 
+type Msg
+    = ParticleMsg (System.Msg Droplet)
+    | Detonate
 
 type alias Droplet =
     { color : String
@@ -59,16 +74,21 @@ waterEmitter delta =
 
 
 -- views
+type alias Model = System Droplet
 
-
-view : System Droplet -> Html msg
-view system =
-    Html.main_ []
+view : Model -> Html msg
+view model =
+    div []
         [ System.view viewDroplet
             [ style "width" "100%"
             , style "height" "98vh"
             ]
-            system
+            model ,
+            Html.button
+            [onClick Detonate,
+             style "display" "block"
+            ]
+            [ Html.text "Detonate!" ]
         ]
 
 
