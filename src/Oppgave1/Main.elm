@@ -34,6 +34,7 @@ init _ =
 
 type Msg
   = Roll
+  -- Denne må utvides!
 
 
 update : Msg -> Model -> (Model, Cmd Msg)
@@ -41,8 +42,10 @@ update msg model =
   case msg of
     Roll ->
       ( model
-      , Cmd.none
+      , Cmd.none -- Cmd.none gjør akkurat det den beskriver, nemlig ingenting! Her må det utvides.
       )
+  -- Her må du legge til noe!
+
 
 
 
