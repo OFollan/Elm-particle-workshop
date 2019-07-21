@@ -4,15 +4,15 @@
 
 Før vi er klare for å bruke randomness til å mekke nå sjuki stuff, må vi hente fram støttehjula. For å dra inn såkalte "skitne" elementer inn i det rene og funksjonelle miljøet Elm er, trenger man å ta i bruk noe som kalles Commands. Man kan tenke på Commands som en slags "oppskrift" på en oppgave som Elm gir videre til en ekstern verden. Dette gjør at vi kan skrive funksjoner som returnerer oppskrifter \(Commands\). 
 
-For eksempel, man kan se for seg en verden der Ragnhild drar på en restaurant og alltid returnerer Spareribs når en kelner kaller funksjonen
+For eksempel, man kan se for seg en verden der Ragnhild drar på en restaurant og alltid returnerer taco når en kelner kaller funksjonen
 
 ```text
-RagnhildsBetilling : String -> String 
+RagnhildsBestilling : String -> String 
 RagnhildsBestilling kelnerensAnbefaling 
-    = "SPARERIBS"
+    = "TACO"
 ```
 
-Dette er en helt prima Elm-funksjon. Men, det kan sammenlignes med en Command, fordi Ragnhild kan på ingen måte garantere at den Spareribsen hun får servert er like god som på nabo-restauranten. Ragnhild har oppført seg eksemplarisk, og gir samme output ved samme input, men den påfølgende middagsopplevelsen er utenfor hennes kontroll! 
+Dette er en helt prima Elm-funksjon. Men, det kan sammenlignes med en Command, fordi Ragnhild kan på ingen måte garantere at den tacoen hun får servert er like god som på nabo-restauranten. Ragnhild har oppført seg eksemplarisk, og gir samme output ved samme input, men den påfølgende middagsopplevelsen er utenfor hennes kontroll! 
 
 På denne måten bryter ikke dette med det funksjonelle kravet om at samme funksjon med samme input alltid returnerer det samme, siden Commanden er lik, det er bare omverdenen som reagerer forskjellig på Commanden. 
 
@@ -47,7 +47,8 @@ Nå er vi nesten i mål! Konstruktøren  `NewDiceFace` er en funksjon  `(Int -> 
 
 Etter at Commanden er utført av omverdenen, snapper Elm runtimen opp resultatet i `Update`. , og da nettopp i formen av en `Msg` av typen `NewDiceFace`.
 
+### Oppgave
 
-
-
+1. Klon [repoet ](https://github.com/OFollan/Elm-particle-workshop)og kjør programmet med `elm-app start`.  Da skal du få opp terning som alltid viser 1. 
+2.  Gå deretter til src/Oppgave1/Main.elm og skriv om fila slik at vi får tilfeldig tall når vi triller terningen.   
 
