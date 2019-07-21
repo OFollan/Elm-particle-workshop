@@ -25,18 +25,18 @@ type Msg
 spark : Color -> Generator (Particle Firework)
 spark color =
     Particle.init (Random.constant (Spark color))
-        |> Particle.withDirection (Random.map degrees (Random.float 0 360))
-        |> Particle.withSpeed (Random.map (clamp 0 200) (normal 100 100))
-        |> Particle.withLifetime (normal 1.25 0.1)
+        |> Particle.withDirection (Random.constant 100)
+        |> Particle.withSpeed (Random.constant 100)
+        |> Particle.withLifetime (Random.constant 1.25)
 
 
 spawnFireworks : Model -> (Model, Cmd Msg)
 spawnFireworks model =
     ( System.burst
      (Random.Extra.andThen3 fireworkAt
-      (Random.uniform Red [Green, Blue])
-      (normal 300 100)
-      (normal 300 100)
+      (Random.constant Red )
+      (Random.constant 300)
+      (Random.constant 300)
       )
        model
             , Cmd.none
