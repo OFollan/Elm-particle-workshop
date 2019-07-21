@@ -45,9 +45,9 @@ Dette er omtrent akkurat hva vi trenger nå. Vi trenger en Msg som har en konstr
 type Msg = NewDiceFace Int
 ```
 
-Nå er vi nesten i mål! Konstruktøren  `NewDiceFace` er en funksjon  `(Int -> Msg)`  og `myGenerator` er av typen `Generator Int`. j  Da gjenstår det bare å gi disse parameterne til funksjonen `Random.generate`  og vi har lagd vår første Command!
+Nå er vi nesten i mål! Konstruktøren  `NewDiceFace` er en funksjon  `(Int -> Msg)`  og `myGenerator` er av typen `Generator Int`.  Da gjenstår det bare å gi disse parameterne til funksjonen `Random.generate`  og vi har lagd vår første Command!
 
-Etter at Commanden er utført av omverdenen, snapper Elm runtimen opp resultatet i `Update`. Derfor må vi lage en branch i Update som tar hensyn til å få inn `Msg` av typen `NewDiceFace`, og oppdatere modellen deretter.
+Etter at Commanden er utført av omverdenen, snapper Elm runtimen opp resultatet i `Update`. , og da nettopp i formen av en `Msg` av typen `NewDiceFace`.
 
 
 
