@@ -8,5 +8,5 @@ Etter vi har sett litt på hvordan man får til tilfeldig data, skal vi bruke de
 
 
 
-Begynn med å klone dette [repoet](https://github.com/OFollan/Elm-particle-workshop), og hopp over til `Oppgave 1`
+Begynn med å klone dette [repoet](https://github.com/OFollan/Elm-particle-workshop), og hopp over til Oppgave 1!
 
