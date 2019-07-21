@@ -34,6 +34,7 @@ init _ =
 
 type Msg
   = Roll
+  | NewFace Int
 
 
 update : Msg -> Model -> (Model, Cmd Msg)
@@ -41,8 +42,11 @@ update msg model =
   case msg of
     Roll ->
       ( model
-      , Cmd.none
+      , Random.generate NewFace (Random.int 1 6)
       )
+    NewFace value ->
+        ( { model | dieFace = value },
+         Cmd.none )
 
 
 
