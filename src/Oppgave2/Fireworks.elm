@@ -23,8 +23,31 @@ type Msg
     = ParticleMsg (System.Msg Firework)
     | Detonate
 
+spawnFireworks : Model -> (Model, Cmd Msg)
+spawnFireworks model =
+    ( System.burst
+     (Random.Extra.andThen3 fireworkAt
+      (Random.uniform Red [Green, Blue])
+      (normal 300 100)
+      (normal 300 100)
+      )
+       model
+            , Cmd.none
+            )
 
-
+fireworkAt : Color -> Float -> Float -> Generator (List (Particle Firework))
+fireworkAt color x y =
+    fizzler color
+        |> Particle.withLocation (Random.constant { x = x, y = y })
+        |> Particle.withGravity 50
+        |> Particle.withDrag
+            (\_ ->
+                { coefficient = 1
+                , density = 0.015
+                , area = 2
+                }
+            )
+        |> Random.list 150
 
 update : Msg -> Model -> ( Model, Cmd Msg )
 update msg model =
@@ -33,15 +56,7 @@ update msg model =
             ( System.update inner model, Cmd.none )
 
         Detonate ->
-            ( System.burst
-             ( Random.list 50 (
-            Particle.init (Random.constant (Fizzler Red))
-                |> Particle.withDirection ( Random.constant 0)
-                |> Particle.withLocation (Random.constant { x = 300, y = 300 })
-                |>  Particle.withLifetime (Random.constant 1)
-                |> Particle.withSpeed ( Random.constant 200)))  model
-            , Cmd.none
-            )
+            spawnFireworks model
 
 
 view : Model -> Html Msg

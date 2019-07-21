@@ -18,6 +18,8 @@ type Firework
 
 type Color
     = Red
+    | Green
+    | Blue
 
 fizzler : Color -> Generator (Particle Firework)
 fizzler color =
@@ -43,6 +45,10 @@ toHsl color =
     case color of
         Red ->
             ( 0, 86, 75 )
+        Green ->
+            (90, 75, 75)
+        Blue ->
+            (211, 49, 83)
 
 
 
