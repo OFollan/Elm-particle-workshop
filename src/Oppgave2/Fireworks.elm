@@ -23,31 +23,23 @@ type Msg
     | Detonate
 
 
-spark : Color -> Generator (Particle Firework)
-spark color =
-    Particle.init (Random.constant (Spark color))
-        |> Particle.withDirection (Random.constant 100)
+spark : Generator (Particle Firework)
+spark =
+    Particle.init (Random.constant (Spark Red))
         |> Particle.withSpeed (Random.constant 100)
         |> Particle.withLifetime (Random.constant 1.25)
+        |> Particle.withLocation (Random.constant { x = 300, y = 300 })
+
 
 
 spawnFireworks : Model -> ( Model, Cmd Msg )
 spawnFireworks model =
-    ( System.burst (firework Red) model, Cmd.none )
+    (System.burst firework model, Cmd.none )
 
 
-firework : Color -> Generator (List (Particle Firework))
-firework color =
-    spark color
-        |> Particle.withLocation (Random.constant { x = 300, y = 300 })
-        |> Particle.withGravity 50
-        |> Particle.withDrag
-            (\_ ->
-                { coefficient = 1
-                , density = 0.015
-                , area = 2
-                }
-            )
+firework : Generator (List (Particle Firework))
+firework =
+    spark
         |> Random.list 150
 
 
