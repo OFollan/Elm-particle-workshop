@@ -1,8 +1,8 @@
 # Oppgave 1
 
-## Trille terning \(woopetiwoopwoop\)
+## Trille terning \(Spennende!!\)
 
-Før vi er klare for å bruke randomness til å mekke nå sjuki stuff, må vi hente fram støttehjula. For å dra inn såkalte "skitne" elementer inn i det rene og funksjonelle miljøet Elm er, trenger man å ta i bruk noe som kalles Commands. Man kan tenke på Commands som en slags "oppskrift" på en oppgave som Elm gir videre til en ekstern verden. Dette gjør at vi kan skrive funksjoner som returnerer oppskrifter \(Commands\). 
+Før vi er klare for å bruke randomness til å få til noe vakkert, må vi hente fram støttehjula. For å dra inn såkalte "skitne" elementer inn i det rene og funksjonelle miljøet Elm er, trenger man å ta i bruk noe som kalles Commands \(eller Subscriptions\). Man kan tenke på Commands som en slags "oppskrift" på en oppgave som Elm gir videre til en ekstern verden. Dette gjør at vi kan skrive funksjoner som returnerer oppskrifter \(Commands\). 
 
 For eksempel, man kan se for seg en verden der Ragnhild drar på en restaurant og alltid returnerer taco når en kelner kaller funksjonen
 
@@ -45,7 +45,7 @@ type Msg = NewDiceFace Int
 
 Nå er vi nesten i mål! Konstruktøren  `NewDiceFace` er en funksjon  `(Int -> Msg)`  og `myGenerator` er av typen `Generator Int`.  Da gjenstår det bare å gi disse parameterne til funksjonen `Random.generate`  og vi har lagd vår første Command!
 
-Etter at Commanden er utført av omverdenen, snapper Elm runtimen opp resultatet i `Update`, og da nettopp i formen av en `Msg` av typen `NewDiceFace`.
+Etter at Commanden er utført, vil Elm runtimen sende en `Msg` av typen `NewDiceFace` til appen vår, og vi har et flunkende nytt, tilfeldig tall å leke med!
 
 ### Oppgave
 
