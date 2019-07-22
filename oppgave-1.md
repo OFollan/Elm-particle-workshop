@@ -1,8 +1,8 @@
 # Oppgave 1
 
-## Trille terning \(woopetiwoopwoop\)
+## Trille terning \(Spennende!!\)
 
-Før vi er klare for å bruke randomness til å mekke nå sjuki stuff, må vi hente fram støttehjula. For å dra inn såkalte "skitne" elementer inn i det rene og funksjonelle miljøet Elm er, trenger man å ta i bruk noe som kalles Commands. Man kan tenke på Commands som en slags "oppskrift" på en oppgave som Elm gir videre til en ekstern verden. Dette gjør at vi kan skrive funksjoner som returnerer oppskrifter \(Commands\). 
+Før vi er klare for å bruke randomness til å få til noe vakkert, må vi hente fram støttehjula. For å dra inn såkalte "skitne" elementer inn i det rene og funksjonelle miljøet Elm er, trenger man å ta i bruk noe som kalles Commands \(eller Subscriptions\). Man kan tenke på Commands som en slags "oppskrift" på en oppgave som Elm gir videre til en ekstern verden. Dette gjør at vi kan skrive funksjoner som returnerer oppskrifter \(Commands\). 
 
 For eksempel, man kan se for seg en verden der Ragnhild drar på en restaurant og alltid returnerer taco når en kelner kaller funksjonen
 
