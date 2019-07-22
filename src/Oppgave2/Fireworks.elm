@@ -1,7 +1,7 @@
 module Main exposing (main)
 
-import Helpers exposing (hslString, fireworkView, Firework(..), Color(..))
 import Browser exposing (Document)
+import Helpers exposing (Color(..), Firework(..), fireworkView, hslString)
 import Html exposing (Html)
 import Html.Attributes exposing (style)
 import Html.Events exposing (onClick)
@@ -14,13 +14,14 @@ import Svg exposing (Svg)
 import Svg.Attributes as SAttrs
 
 
-
 type alias Model =
     System Firework
+
 
 type Msg
     = ParticleMsg (System.Msg Firework)
     | Detonate
+
 
 spark : Color -> Generator (Particle Firework)
 spark color =
@@ -30,22 +31,15 @@ spark color =
         |> Particle.withLifetime (Random.constant 1.25)
 
 
-spawnFireworks : Model -> (Model, Cmd Msg)
+spawnFireworks : Model -> ( Model, Cmd Msg )
 spawnFireworks model =
-    ( System.burst
-     (Random.Extra.andThen3 fireworkAt
-      (Random.constant Red )
-      (Random.constant 300)
-      (Random.constant 300)
-      )
-       model
-            , Cmd.none
-            )
+    ( System.burst (firework Red) model, Cmd.none )
 
-fireworkAt : Color -> Float -> Float -> Generator (List (Particle Firework))
-fireworkAt color x y =
+
+firework : Color -> Generator (List (Particle Firework))
+firework color =
     spark color
-        |> Particle.withLocation (Random.constant { x = x, y = y })
+        |> Particle.withLocation (Random.constant { x = 300, y = 300 })
         |> Particle.withGravity 50
         |> Particle.withDrag
             (\_ ->
@@ -55,6 +49,7 @@ fireworkAt color x y =
                 }
             )
         |> Random.list 150
+
 
 update : Msg -> Model -> ( Model, Cmd Msg )
 update msg model =
