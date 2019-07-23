@@ -32,5 +32,9 @@ Se på linje 28 i Oppgave2/Fireworks.elm for å få et hint til hvordan disse fu
 3. Avfyr en rakett. Litt kjedlig enda, right?
 4. Gå deretter til src/Oppgave2/Fireworks.elm og prøv deg fram med å generer random verdier for å få til litt annerledes fyrverkeri.  
 
+### Bonus!
+
+1. Gå inn i src/Ekstraoppgave/Main.elm og få til noe kult! Vi prøvde å leke litt her, men vi forventer og håper at dere får til noe mye fetere!
+
 
 
