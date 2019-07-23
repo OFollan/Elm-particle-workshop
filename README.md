@@ -6,5 +6,5 @@ Velkommen til Elm workshop! I dag skal vi lære litt om Commands, og bruke det t
 
 Etter vi har sett litt på hvordan man får til tilfeldig data, skal vi bruke det til å lage no vakkert og visuelt!
 
-Begynn med å klone dette [repoet](https://github.com/OFollan/Elm-particle-workshop), og hopp over til Oppgave 1!
+Begynn med å klone dette [repoet](https://github.com/OFollan/Elm-particle-workshop), og hopp over til neste kapittel, Trille terning!
 

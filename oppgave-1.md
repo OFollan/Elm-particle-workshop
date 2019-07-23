@@ -39,7 +39,7 @@ Vi ser at parameter nummer 1 er en funksjon \(absolutt ALT i Elm er funksjoner, 
 type Msg = CardClicked Card
 ```
 
-Dette er omtrent akkurat hva vi trenger nå. Vi trenger en Msg som har en konstruktør som tar inn en Int.
+Dette er omtrent akkurat hva vi trenger nå. `CardClicked` er i dette tilfellet en funksjon som tar inn et `Card` og returnerer en `Msg`. Vi er på jakt etter noe litt annet, vi trenger en `Msg` som har en konstruktør som tar inn en `Int`. Noe sånt som dette kan funke:
 
 ```
 type Msg = NewDiceFace Int
