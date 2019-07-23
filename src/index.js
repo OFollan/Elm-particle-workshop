@@ -1,5 +1,5 @@
 import './main.css';
-import { Elm } from './Oppgave2/Fireworks.elm';
+import { Elm } from './Ekstraoppgave/Main.elm';
 import registerServiceWorker from './registerServiceWorker';
 
 Elm.Main.init({
