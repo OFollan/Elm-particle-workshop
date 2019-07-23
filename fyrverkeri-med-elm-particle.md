@@ -27,14 +27,15 @@ Se på linje 28 i Oppgave2/Fireworks.elm for å få et hint til hvordan disse fu
 
 ### Oppgave
 
-1. Gå inn i fila `index.js` og kommenter ut linje 2, fjern kommentar på linje 3.
+1. Gå inn i fila `index.js` og kommenter ut linja under Oppgave 1, og fjern kommentar under Oppgave 2.
 2. Gå tilbake til `localhost:3000` og se at du har fått et helt nytt skjermbilde!
 3. Avfyr en rakett. Litt kjedlig enda, right?
 4. Gå deretter til src/Oppgave2/Fireworks.elm og prøv deg fram med å generer random verdier for å få til litt annerledes fyrverkeri.  
 
 ### Bonus!
 
-1. Gå inn i src/Ekstraoppgave/Main.elm og få til noe kult! Vi prøvde å leke litt her, men vi forventer og håper at dere får til noe mye fetere!
+1. Gå inn i fila `index.js` og kommenter inn/ut.
+2. Gå inn i src/Ekstraoppgave/Main.elm og få til noe kult! Vi prøvde å leke litt her, men vi forventer og håper at dere får til noe mye fetere!
 
 
 
