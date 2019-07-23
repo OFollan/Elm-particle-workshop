@@ -10,7 +10,18 @@ Det er mye gøy en kan gjøre med tilfeldighet. For eksempel er tilfeldighet i d
 
 ### Elm-particle
 
-I denne delen av workshopen skal vi begynne bruke Elm-particle biblioteket. Dette biblioteket hjelper oss med å animere, you guessed it, partikler. 
+I denne delen av workshopen skal vi begynne bruke Elm-particle biblioteket. Dette biblioteket hjelper oss med å animere, you guessed it, partikler.
+
+{% hint style="info" %}
+Et par hint til å komme i gang med biblioteket.
+
+Du har tilgang til en drøss med funksjoner av typen   
+[withSpeed](https://package.elm-lang.org/packages/BrianHicks/elm-particle/latest/Particle#withSpeed) : Generator Float -&gt; Generator \([Particle](https://package.elm-lang.org/packages/BrianHicks/elm-particle/latest/Particle#Particle) a\) -&gt; Generator \([Particle](https://package.elm-lang.org/packages/BrianHicks/elm-particle/latest/Particle#Particle) a\)  
+som setter en hastighet på en partikkel. Tilsvarende fins   
+[withDirection](https://package.elm-lang.org/packages/BrianHicks/elm-particle/latest/Particle#withDirection) : Generator Float -&gt; Generator \([Particle](https://package.elm-lang.org/packages/BrianHicks/elm-particle/latest/Particle#Particle) a\) -&gt; Generator \([Particle](https://package.elm-lang.org/packages/BrianHicks/elm-particle/latest/Particle#Particle) a\)
+
+Se på linje 28 i Oppgave2/Fireworks.elm for å få et hint til hvordan disse funksjonene kan brukes!  
+{% endhint %}
 
 
 
@@ -19,7 +30,7 @@ I denne delen av workshopen skal vi begynne bruke Elm-particle biblioteket. Dett
 1. Gå inn i fila `index.js` og kommenter ut linje 2, fjern kommentar på linje 3.
 2. Gå tilbake til `localhost:3000` og se at du har fått et helt nytt skjermbilde!
 3. Avfyr en rakett. Litt kjedlig enda, right?
-4. Gå deretter til src/Oppgave2/Fireworks.elm og prøv deg fram med å generer random verdier for å få til litt annerledes fyrverkeri!  
+4. Gå deretter til src/Oppgave2/Fireworks.elm og prøv deg fram med å generer random verdier for å få til litt annerledes fyrverkeri.  
 
 
 
