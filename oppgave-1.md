@@ -2,7 +2,13 @@
 
 ## Commands
 
-Før vi er klare for å bruke randomness til å få til noe vakkert, må vi hente fram støttehjula. For å dra inn såkalte "skitne" elementer inn i det rene og funksjonelle miljøet Elm er, trenger man å ta i bruk noe som kalles Commands \(eller Subscriptions, men ikke tenk på det\). Man kan tenke på Commands som en slags "oppskrift" på en oppgave som Elm gir videre til en ekstern verden. Dette gjør at vi kan skrive funksjoner som returnerer oppskrifter \(Commands\). 
+Før vi er klare for å bruke randomness til å få til noe vakkert, må vi hente fram støttehjula. For å dra inn såkalte "skitne" elementer inn i det rene og funksjonelle miljøet Elm er, trenger man å ta i bruk noe som kalles Commands \(eller Subscriptions, men ikke tenk på det\). Man kan tenke på Commands som en slags "oppskrift" på en oppgave som Elm gir videre til en ekstern verden, slik som i figuren under. 
+
+![](.gitbook/assets/elm-commands%20%281%29.jpg)
+
+Vi lar Elm-runtime ta urføre de inpure operasjonene våre og gi oss verdien når den er ferdig. På denne måten bryter ikke dette med det funksjonelle kravet om at samme funksjon med samme input alltid returnerer det samme, siden Commanden er lik, det er bare omverdenen som reagerer forskjellig på Commanden. 
+
+-- GAMMELT EKS ---
 
 For eksempel, man kan se for seg en verden der Ragnhild drar på en restaurant og alltid returnerer taco når en kelner kaller funksjonen
 
