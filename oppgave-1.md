@@ -6,21 +6,7 @@ Før vi er klare for å bruke randomness til å få til noe vakkert, må vi hent
 
 ![](.gitbook/assets/elm-commands%20%281%29.jpg)
 
-Vi lar Elm-runtime ta urføre de inpure operasjonene våre og gi oss verdien når den er ferdig. På denne måten bryter ikke dette med det funksjonelle kravet om at samme funksjon med samme input alltid returnerer det samme, siden Commanden er lik, det er bare omverdenen som reagerer forskjellig på Commanden. 
-
--- GAMMELT EKS ---
-
-For eksempel, man kan se for seg en verden der Ragnhild drar på en restaurant og alltid returnerer taco når en kelner kaller funksjonen
-
-```text
-RagnhildsBestilling : String -> String 
-RagnhildsBestilling kelnerensAnbefaling 
-    = "TACO"
-```
-
-Dette er en helt prima Elm-funksjon. Men, det kan sammenlignes med en Command, fordi Ragnhild kan på ingen måte garantere at den tacoen hun får servert er like god som på nabo-restauranten. Ragnhild har oppført seg eksemplarisk, og gir samme output ved samme input, men den påfølgende middagsopplevelsen er utenfor hennes kontroll! 
-
-På denne måten bryter ikke dette med det funksjonelle kravet om at samme funksjon med samme input alltid returnerer det samme, siden Commanden er lik, det er bare omverdenen som reagerer forskjellig på Commanden. 
+Vi lar Elm-runtime utføre de inpure operasjonene våre og gi oss tilbake verdiene når den er ferdig. På denne måten bryter ikke koden vår med det funksjonelle kravet om at samme funksjon med samme input alltid returnerer det samme. Commanden - oppskriften på hva som skal gjøres - er alltid den samme, men omverdenen kan reagere forskjellig på Commanden. 
 
 ## Random
 

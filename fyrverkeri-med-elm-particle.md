@@ -10,7 +10,16 @@ Det er mye gøy en kan gjøre med tilfeldighet. For eksempel er tilfeldighet i d
 
 ### Elm-particle
 
-I denne delen av workshopen skal vi begynne bruke Elm-particle biblioteket. Dette biblioteket hjelper oss med å animere, you guessed it, partikler.
+I denne delen av workshopen skal vi begynne å bruke Elm-particle biblioteket. Dette biblioteket hjelper oss med å animere, you guessed it, partikler.
+
+### Oppgave
+
+1. Gå inn i fila `index.js` og kommenter ut linja under Oppgave 1, og fjern kommentar under Oppgave 2.
+2. Gå tilbake til `localhost:3000` og se at du har fått et helt nytt skjermbilde!
+3. Avfyr en rakett. Litt kjedlig enda, right?
+4. Gå deretter til src/Oppgave2/Fireworks.elm og prøv deg fram med å generer random verdier for å få til litt annerledes fyrverkeri.  
+
+
 
 {% hint style="info" %}
 Et par hint til å komme i gang med biblioteket.
@@ -24,13 +33,6 @@ Se på linje 28 i Oppgave2/Fireworks.elm for å få et hint til hvordan disse fu
 {% endhint %}
 
 
-
-### Oppgave
-
-1. Gå inn i fila `index.js` og kommenter ut linja under Oppgave 1, og fjern kommentar under Oppgave 2.
-2. Gå tilbake til `localhost:3000` og se at du har fått et helt nytt skjermbilde!
-3. Avfyr en rakett. Litt kjedlig enda, right?
-4. Gå deretter til src/Oppgave2/Fireworks.elm og prøv deg fram med å generer random verdier for å få til litt annerledes fyrverkeri.  
 
 ### Bonus!
 
