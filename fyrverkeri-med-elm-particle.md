@@ -10,7 +10,7 @@ Det er mye gøy en kan gjøre med tilfeldighet. For eksempel er tilfeldighet i d
 
 ### Elm-particle
 
-I denne delen av workshopen skal vi begynne å bruke Elm-particle biblioteket. Dette biblioteket hjelper oss med å animere, you guessed it, partikler.
+I denne delen av workshopen skal vi begynne å bruke Elm-particle biblioteket. Dette biblioteket hjelper oss med å animere, you guessed it, partikler. Han som har laget biblioteket, Brian Hicks, har en [talk](https://www.youtube.com/watch?v=goL7LeDHFi4) fra Oslo Elm Day der han snakker om dette.
 
 ### Oppgave
 
